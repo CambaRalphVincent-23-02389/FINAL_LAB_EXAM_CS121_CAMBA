@@ -19,6 +19,7 @@ class User:
                     users.append((username, password, scores))
         return users
 
+    # Save username and password in a text file
     def save_users(self):
         user_folder = 'data'
         user_file_path = os.path.join(user_folder, 'user_credentials.txt')

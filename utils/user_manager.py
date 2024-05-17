@@ -5,6 +5,8 @@ class UserManager:
 		self.data_folder = 'data'
 		self.user_credentials_file = os.path.join(self.data_folder, 'user_credentials.txt')
 
+
+	# Checks username input if already exists
 	def check_username(self, username):
 		with open(self.user_credentials_file, 'r') as file:
 			for line in file:
@@ -13,6 +15,8 @@ class UserManager:
 					return True
 		return False
 
+
+	# This method checks the username and password if it exists and correct
 	def check_user_credentials(self, username, password):
 		with open(self.user_credentials_file, 'r') as file:
 			for line in file:
@@ -21,7 +25,7 @@ class UserManager:
 					return True
 		return False
 
-
+	# Allows users to register
 	def register(self):
 		print("\n--REGISTER--")
 		username = input("Enter username (at least 4 characters), or leave blank to cancel: ")
@@ -45,6 +49,7 @@ class UserManager:
 					user.save_users()
 					print("Registered successfully.")
 
+	# Allows the user to log in
 	def login(self):
 		print("\n--LOGIN--")
 		username = input("Enter username (at least 4 characters): ")
